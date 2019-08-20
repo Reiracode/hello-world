@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>searchitem</title>
+    <link href="https://fonts.googleapis.com/css?family=Noto+Serif+JP" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Chicle" rel="stylesheet">
+    <link rel="stylesheet" href="css/cloversky.css">
+    <script defer src="https://use.fontawesome.com/releases/v5.0.0/js/all.js"></script>
+
+</head>
+<!-- 
+1、數量=0 or ""不能加入購物車
+2、add TO CART 加入相同品項的清單 跳轉至購物車 修改數量
+3' input type=text and number 不同
+
+-->
+<body>
+<div class="headerPage"></div>
+
+<div class="second_mainss">
+    
+    
+
+</div>
+<script src="https://code.jquery.com/jquery-3.4.1.min.js"
+    integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script> 
+
+    <script>
+    $(document).ready(function () {
+    var token = 'kICyWhZ5XsfI4n1d4gBOsDjIyIxNozwgmxYKyZpzi5pjLcU2Nl4RhiGrn6zaPuTJ'
+    var cconet ='https://challenge.thef2e.com/api/thef2e2019/stage6/rooms'
+        // $.ajax({
+        //     xhrFields: {
+        //         withCredentials: true
+        //     },
+        //     headers: { 'Authorization': `Bearer ${token}` },
+        //     type: "GET",
+        //     url: cconet,
+        // }).done(function (data) {
+        //     console.log(data);
+        // });
+
+
+            fetch(cconet,{
+                method: 'GET',              
+                credentials: 'include',
+                headers: {
+                    'Authorization': `Bearer ${token}`,
+                    'Content-type': 'application/json',
+                    'Accept': 'application/json',
+                }
+            }).then(function (response) {
+                // 直接轉成JSON格式
+                // return response.json()
+                console.log(response)
+            }).then(function (j) {
+                // `j`會是一個JavaScript物件
+                console.log(j)
+            }).catch(function (err) {
+                // Error :(
+            })
+
+
+            // $.ajax({
+            //     url: "https://challenge.thef2e.com/api/thef2e2019/stage6/rooms",
+            //     method: "get",
+            //     mode: 'no-cors',
+            //     // dataType: 'jsonp',
+            //     credentials: "same-origin",
+            //     xhrFields: {
+            //         withCredentials: false
+            //     },
+            //     headers: {
+            //         'Authorization': `Bearer ${token}`,
+            //         'Content-type': 'application/json',
+            //         'Accept': 'application/json',
+            //     },
+            //     success: function (data, status) {
+            //         return console.log("The returned data", data);
+            //     },
+            //     beforeSend: function (xhr, settings) { xhr.setRequestHeader('Authorization', 'Bearer ' + token); }
+            // });
+ 
+    })
+
+  
+    </script>
+</body>
+</html>
